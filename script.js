@@ -6,6 +6,7 @@ var computerScore = 0;
 var r = 'Rock';
 var s = 'Scissors';
 var p = 'Paper';
+let gameOver = false;
 
 function getComputerChoice() {
     computerchoice = Math.floor(Math.random() * 3);
@@ -35,6 +36,8 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
+    
+    
     div.textContent= '';
     duelStart.textContent =(`Human chose ${humanChoice}, Computer Chose ${computerChoice}`);
     div.appendChild(duelStart);
@@ -48,6 +51,8 @@ function playRound(humanChoice, computerChoice) {
         duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
         div.appendChild(duelOutcome);
         div.appendChild(document.createElement('br'));
+        isgameOver();
+        
     }
     if (humanChoice == "rock" && computerChoice =="Rock"){
         duelFight.textContent =("TIE");
@@ -56,6 +61,7 @@ function playRound(humanChoice, computerChoice) {
         duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
         div.appendChild(duelOutcome);
         div.appendChild(document.createElement('br'));
+        isgameOver();
     }
     if (humanChoice == "rock" && computerChoice =="Scissors"){
         duelFight.textContent = ("Rock beat Scissors! You WIN!");
@@ -65,6 +71,7 @@ function playRound(humanChoice, computerChoice) {
         duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
         div.appendChild(duelOutcome);
         div.appendChild(document.createElement('br'));
+        isgameOver();
     }
     if (humanChoice == "paper" && computerChoice =="Paper"){
         duelFight.textContent=("TIE");
@@ -73,6 +80,7 @@ function playRound(humanChoice, computerChoice) {
         duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
         div.appendChild(duelOutcome);
         div.appendChild(document.createElement('br'));
+        isgameOver();
     }
     if (humanChoice == "paper" && computerChoice =="Rock"){
         duelFight.textContent = ("Paper beat Rock! You Win!");
@@ -82,6 +90,7 @@ function playRound(humanChoice, computerChoice) {
         duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
         div.appendChild(duelOutcome);
         div.appendChild(document.createElement('br'));
+        isgameOver();
     }
     if (humanChoice == "paper" && computerChoice =="Scissors"){
         duelFight.textContent=("Scissors beat Paper! You LOST!");
@@ -91,6 +100,7 @@ function playRound(humanChoice, computerChoice) {
         duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
         div.appendChild(duelOutcome);
         div.appendChild(document.createElement('br'));
+        isgameOver();
     }
     if (humanChoice == "scissors" && computerChoice =="Rock"){
         duelFight.textContent=("Rock beat Scissors! You LOST!");
@@ -100,6 +110,7 @@ function playRound(humanChoice, computerChoice) {
         duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
         div.appendChild(duelOutcome);
         div.appendChild(document.createElement('br'));
+        isgameOver();
     }
     if (humanChoice == "scissors" && computerChoice =="Paper"){
         duelFight.textContent=("Scissors beat Paper! You Win!");
@@ -109,6 +120,7 @@ function playRound(humanChoice, computerChoice) {
         duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
         div.appendChild(duelOutcome);
         div.appendChild(document.createElement('br'));
+        isgameOver();
     }
     if (humanChoice == "scissors" && computerChoice =="Scissors"){
         duelFight.textContent=("TIE!");
@@ -117,6 +129,7 @@ function playRound(humanChoice, computerChoice) {
         duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
         div.appendChild(duelOutcome);
         div.appendChild(document.createElement('br'));
+        isgameOver();
         
     }
    
@@ -172,3 +185,25 @@ playGame(); */
  let duelStart = document.createElement("span");
  let duelFight = document.createElement("span");
  let duelOutcome = document.createElement("span");
+ let gameOutcome = document.createElement("span");
+
+ function isgameOver(){
+    if (humanScore == 5)
+    {
+        gameOutcome.textContent="GAME OVER! HUMAN WON!";
+        div.appendChild(gameOutcome);
+        humanScore =0;
+        computerScore =0;
+        return 0;
+        
+    }
+    else if (computerScore == 5)
+    {
+        gameOutcome.textContent="GAME OVER! COMPUTER WON";
+        div.appendChild(gameOutcome);
+        humanScore =0;
+        computerScore=0;
+        return 0;
+    }
+ }
+ 
