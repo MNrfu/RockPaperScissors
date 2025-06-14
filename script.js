@@ -1,9 +1,11 @@
 console.log("hello");
 var computerchoice = '';
 var humanchoice = '';
-
 var humanScore = 0;
 var computerScore = 0;
+var r = 'Rock';
+var s = 'Scissors';
+var p = 'Paper';
 
 function getComputerChoice() {
     computerchoice = Math.floor(Math.random() * 3);
@@ -84,19 +86,19 @@ function playRound(humanChoice, computerChoice) {
 
 
 
-function playGame() {
+/*function playGame() {
 
-    for (i=0; i<=5; i++)
+    for (i=0; i<=50; i++)
         {    
             humanSelection = getHumanChoice();
             computerSelection = getComputerChoice();
             playRound(humanSelection, computerSelection);
 
-            if (humanScore ==3){
+            if (humanScore ==5){
                 console.log("YOU WON!");
                 break;
             }
-            else if (computerScore==3) {
+            else if (computerScore==5) {
                 console.log("YOU LOST!");
                 break;
             }
@@ -105,4 +107,20 @@ function playGame() {
    
 
 
-playGame();
+playGame(); */
+
+ const buttonRock = document.createElement("button");
+ const buttonPaper = document.createElement("button");
+ const buttonScissors = document.createElement("button");
+ 
+ buttonRock.textContent = "ROCK";
+ buttonPaper.textContent = "PAPER";
+ buttonScissors.textContent = "SCISSORS";
+
+ buttonRock.addEventListener('click', () => playRound(humanChoice="rock", getComputerChoice()));
+ buttonPaper.addEventListener('click', () => playRound(humanChoice="paper", getComputerChoice()));
+ buttonScissors.addEventListener('click', () => playRound(humanChoice="scissors", getComputerChoice()));
+
+ document.body.appendChild(buttonRock);
+ document.body.appendChild(buttonPaper);
+ document.body.appendChild(buttonScissors);
