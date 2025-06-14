@@ -35,48 +35,88 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    console.log(`Human chose ${humanChoice}, Computer Chose ${computerChoice}`);
+    div.textContent= '';
+    duelStart.textContent =(`Human chose ${humanChoice}, Computer Chose ${computerChoice}`);
+    div.appendChild(duelStart);
+    div.appendChild(document.createElement('br'));
+
     if (humanChoice == "rock" && computerChoice =="Paper"){
-        console.log("Paper beat Rock! You LOST!");
+        duelFight.textContent =("Paper beat Rock! You LOST!");
+        div.appendChild(duelFight);
+        div.appendChild(document.createElement('br'));
         computerScore++;
-        console.log(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        div.appendChild(duelOutcome);
+        div.appendChild(document.createElement('br'));
     }
     if (humanChoice == "rock" && computerChoice =="Rock"){
-        console.log("TIE");
-        console.log(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        duelFight.textContent =("TIE");
+        div.appendChild(duelFight);
+        div.appendChild(document.createElement('br'));
+        duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        div.appendChild(duelOutcome);
+        div.appendChild(document.createElement('br'));
     }
     if (humanChoice == "rock" && computerChoice =="Scissors"){
-        console.log("Rock beat Scissors! You WIN!");
+        duelFight.textContent = ("Rock beat Scissors! You WIN!");
+        div.appendChild(duelFight);
+        div.appendChild(document.createElement('br'));
         humanScore++;
-        console.log(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        div.appendChild(duelOutcome);
+        div.appendChild(document.createElement('br'));
     }
     if (humanChoice == "paper" && computerChoice =="Paper"){
-        console.log("TIE");
-        console.log(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        duelFight.textContent=("TIE");
+        div.appendChild(duelFight);
+        div.appendChild(document.createElement('br'));
+        duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        div.appendChild(duelOutcome);
+        div.appendChild(document.createElement('br'));
     }
     if (humanChoice == "paper" && computerChoice =="Rock"){
-        console.log("Paper beat Rock! You Win!");
+        duelFight.textContent = ("Paper beat Rock! You Win!");
+        div.appendChild(duelFight);
+        div.appendChild(document.createElement('br'));
         humanScore++;
-        console.log(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        div.appendChild(duelOutcome);
+        div.appendChild(document.createElement('br'));
     }
     if (humanChoice == "paper" && computerChoice =="Scissors"){
-        console.log("Scissors beat Paper! You LOST!");
+        duelFight.textContent=("Scissors beat Paper! You LOST!");
+        div.appendChild(duelFight);
+        div.appendChild(document.createElement('br'));
         computerScore++;
-        console.log(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        div.appendChild(duelOutcome);
+        div.appendChild(document.createElement('br'));
     }
     if (humanChoice == "scissors" && computerChoice =="Rock"){
-        console.log("Rock beat Scissors! You LOST!");
+        duelFight.textContent=("Rock beat Scissors! You LOST!");
+        div.appendChild(duelFight);
+        div.appendChild(document.createElement('br'));
         computerScore++;
-        console.log(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        div.appendChild(duelOutcome);
+        div.appendChild(document.createElement('br'));
     }
     if (humanChoice == "scissors" && computerChoice =="Paper"){
-        console.log("Scissors beat Paper! You Win!");
+        duelFight.textContent=("Scissors beat Paper! You Win!");
+        div.appendChild(duelFight);
+        div.appendChild(document.createElement('br'));
         humanScore++;
-        console.log(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        div.appendChild(duelOutcome);
+        div.appendChild(document.createElement('br'));
     }
     if (humanChoice == "scissors" && computerChoice =="Scissors"){
-        console.log("TIE!");
-        console.log(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        duelFight.textContent=("TIE!");
+        div.appendChild(duelFight);
+        div.appendChild(document.createElement('br'));
+        duelOutcome.textContent=(`Human Score :${humanScore}, Computer Score :${computerScore}`);
+        div.appendChild(duelOutcome);
+        div.appendChild(document.createElement('br'));
         
     }
    
@@ -124,3 +164,11 @@ playGame(); */
  document.body.appendChild(buttonRock);
  document.body.appendChild(buttonPaper);
  document.body.appendChild(buttonScissors);
+
+
+ const div = document.createElement("div");
+ document.body.appendChild(div);
+
+ let duelStart = document.createElement("span");
+ let duelFight = document.createElement("span");
+ let duelOutcome = document.createElement("span");
